@@ -1,14 +1,18 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+def version_code = 1
+def version_name = "1.0"
+def artifact_id = "adapter-base"
 
 android {
-    compileSdkVersion 28
-
+    compileSdkVersion COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode version_code
+        versionName version_name
 
     }
 
@@ -25,4 +29,16 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     api "com.android.support:recyclerview-v7:$SUPPORT_VERSION"
+}
+
+publish {
+    userOrg = BINTRAY_USER
+    groupId = BINTRAY_GROUP_ID
+    artifactId = artifact_id
+    publishVersion = version_name
+    desc = 'simple RecyclerView adpater base lib'
+    website = "https://github.com/Nstd/SimpleRVAdapter"
+    bintrayUser = BINTRAY_USER
+    bintrayKey = BINTRAY_KEY
+    dryRun = false
 }
