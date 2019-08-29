@@ -36,17 +36,17 @@ Simple Item | DataBinding Item | Multi Type
 
 ``` gradle 
 dependencies {
-    implementation 'com.github.nstd.rvadpater:core:1.0'
+    implementation 'com.nstd.rvadpater:adapter-core:1.0'
 }
 ```
 
 - DataBinding支持库
 
-若果想要holder支持DataBinding，请添加以下依赖
+如果想要holder支持DataBinding，请添加以下依赖
 
 ``` gradle 
 dependencies {
-    implementation 'com.github.nstd.rvadpater:binding:1.0'
+    implementation 'com.nstd.rvadpater:adapter-binding:1.0'
 }
 ```
 
@@ -113,9 +113,9 @@ mAdapter.setData(data);
 ### 多类型
 
 多类型的使用，只比单类型的复杂一点点，需要指定不同viewType的类型。
-假设我们现在有两种类型，参看[MultiTypeActivity]()：
+假设我们现在有两种类型，参看[MultiTypeActivity](blob/master/app/src/main/java/com/nstd/rvsample/MultiTypeActivity.java)：
 
-//TODO 这里放截图
+![Multi Type](images/MultiTypeSample.jpg)
 
 1. 标题Holder (TitleHolder)
 
@@ -190,7 +190,8 @@ SimpleRVAdapter mAdapter = new SimpleRVAdapter()
                 });
 ```
 
-如果某些特殊的item不需要单击/长按事件，可以在holder的`bindData()`中调用`removeItemClickListener()`/`removeItemLongClickListener()`，参见[SimpleItemActivity]()中的[SimpleTextHolder]()
+如果某些特殊的item不需要单击/长按事件，可以在holder的`bindData()`中调用`removeItemClickListener()`/`removeItemLongClickListener()`
+参见[SimpleItemActivity](blob/master/app/src/main/java/com/nstd/rvsample/SimpleItemActivity.java)中的[SimpleTextHolder](blob/master/app/src/main/java/com/nstd/rvsample/holders/SimpleTextHolder.java)
 
 ## 友情提示
 
